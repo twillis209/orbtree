@@ -1240,7 +1240,7 @@ namespace orbtree {
 	 */
 	template<class Key, class Value, class NVType, class Compare = std::less<Key> >
 	using rankmap = orbtreemap< NodeAllocatorPtr< KeyValue<Key,Value>, NVType, true >, Compare,
-			NVFunc_Adapter_Simple< RankFunc<NVType,KeyValue<Key,Value> > >, true >;
+      NVFunc_Adapter_Simple<RankFunc<KeyValue<Key,Value>, NVType > >, true >;
 	
 	/** \class orbtree::rankmultimap
 	 * \brief  Order statistic multimap, calculates the rank of elements.
@@ -1253,7 +1253,7 @@ namespace orbtree {
 	 */
 	template<class Key, class Value, class NVType, class Compare = std::less<Key> >
 	using rankmultimap = orbtree< NodeAllocatorPtr< KeyValue<Key,Value>, NVType, true >, Compare,
-			NVFunc_Adapter_Simple< RankFunc<NVType,KeyValue<Key,Value> > >, true, true >;
+      NVFunc_Adapter_Simple<RankFunc<KeyValue<Key,Value>, NVType >>, true, true >;
 	
 	/** \class orbtree::rankmapC
 	 * \brief  Order statistic map with compact storage, calculates the rank of elements.
@@ -1275,7 +1275,7 @@ namespace orbtree {
 	 */
 	template<class Key, class Value, class NVType, class IndexType = uint32_t, class Compare = std::less<Key> >
 	using rankmapC = orbtreemap< NodeAllocatorCompact< KeyValue<Key,Value>, NVType, IndexType >, Compare,
-			NVFunc_Adapter_Simple< RankFunc<NVType,KeyValue<Key,Value> > >, true >;
+      NVFunc_Adapter_Simple< RankFunc<KeyValue<Key,Value>, NVType > >, true >;
 	
 	/** \class orbtree::rankmultimapC
 	 * \brief  Order statistic multimap with compact storage, calculates the rank of elements.
@@ -1297,7 +1297,7 @@ namespace orbtree {
 	 */
 	template<class Key, class Value, class NVType, class IndexType = uint32_t, class Compare = std::less<Key> >
 	using rankmultimapC = orbtree< NodeAllocatorCompact< KeyValue<Key,Value>, NVType, IndexType >, Compare,
-			NVFunc_Adapter_Simple< RankFunc<NVType,KeyValue<Key,Value> > >, true, true >;
+      NVFunc_Adapter_Simple< RankFunc<KeyValue<Key,Value>, NVType > >, true, true >;
 	
 	
 	
